@@ -227,4 +227,15 @@ public class MenuController
 	{
 		drawParametricCurve();
 	}
+	
+	
+	/**
+	 * Changes the length of the unit interval to default length. Changes position of upper left corner of display to default.
+	 */
+	public void resetChanges()
+	{
+		position = new Dimension(0, 0);
+		length = DEFAULT_LENGTH;
+		drawParametricCurve();
+	}
 }
