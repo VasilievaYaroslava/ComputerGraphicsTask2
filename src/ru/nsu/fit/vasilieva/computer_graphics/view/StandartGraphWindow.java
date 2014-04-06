@@ -293,6 +293,10 @@ public class StandartGraphWindow extends JFrame
 			public void mouseWheelMoved(MouseWheelEvent arg0) 
 			{
 				int count = arg0.getWheelRotation();
+				int realX = arg0.getX();
+				int realY = arg0.getY();
+				controller.movePosition(-(panel.getSize().width / 2 - realX), -(panel.getSize().height / 2 - realY));
+				
 				if (count > 0)
 				{
 					controller.zoom(ZoomType.OUT);
@@ -304,7 +308,7 @@ public class StandartGraphWindow extends JFrame
 				
 			}
 		};
-		this.addMouseWheelListener(adapter);
+		panel.addMouseWheelListener(adapter);
 		panel.addMouseListener(adapter);
 
 	}
